@@ -6,6 +6,7 @@ Fabric script that generates a .tgz file from the contents of the web_static
 from fabric.api import local
 from time import strftime
 
+
 def do_pack():
     """
     Generates a .tgz file from the contents of the web_static
