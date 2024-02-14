@@ -10,9 +10,9 @@ def do_pack():
     """
     Generates a .tgz file from the contents of the web_static
     """
-    
-    date = strftime("%Y%m%d%H%M%S")
-    file_name = "versions/web_static_{}.tgz".format(date)
+
+    date_time = strftime("%Y%m%d%H%M%S")
+    file_name = f"versions/web_static_{date_time}.tgz"
     try:
         local("mkdir -p versions")
         local(f"tar -zcvf {file_name} web_static")
