@@ -11,13 +11,11 @@ def do_pack():
         str: The file path of the generated .tgz file if successful else None.
     """
 
-    # date_time = strftime("%Y%m%d%H%M%S")
-    # file_name = f"versions/web_static_{date_time}.tgz"
-    # try:
-    #     local("mkdir -p versions")
-    #     local(f"tar -zcvf {file_name} web_static")
-    #     return file_name
-    # except Exception as err:
-    #     return None
-    
-    pass
+    date_time = strftime("%Y%m%d%H%M%S")
+    file_name = "versions/web_static_{}.tgz".format(date_time)
+    try:
+        local("mkdir -p versions")
+        local("tar -zcvf {} web_static".format(file_name))
+        return file_name
+    except Exception as err:
+        return None
