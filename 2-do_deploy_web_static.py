@@ -33,7 +33,7 @@ def do_deploy(archive_path):
         sudo("tar -xzf /tmp/{} -C {}".format(file_name, deploy_path))
 
         with cd(deploy_path):
-            run("mv web_static/* .")
+            sudo("mv web_static/* .")
             sudo("rm -rf web_static")
 
         sudo("rm /tmp/{}".format(file_name))
