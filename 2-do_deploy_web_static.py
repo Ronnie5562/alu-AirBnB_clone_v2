@@ -26,7 +26,7 @@ def do_deploy(archive_path):
     try:
         put(archive_path, "/tmp/")
         file_name = re.search(r'[^/]+$', archive_path).group(0)
-        deploy_path = join("/data/web_static/releases/", 
+        deploy_path = join("/data/web_static/releases/",
                            splitext(file_name)[0])
         sudo("mkdir -p {}".format(deploy_path))
 
