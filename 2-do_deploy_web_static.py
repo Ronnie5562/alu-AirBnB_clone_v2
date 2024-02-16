@@ -10,6 +10,7 @@ env.user = "ubuntu"
 env.hosts = ["54.242.215.110", "34.229.154.33"]
 env.key_filename = '~/.ssh/id_rsa'
 
+
 def do_deploy(archive_path):
     """
     Deploy a compressed archive to a remote server.
@@ -18,7 +19,7 @@ def do_deploy(archive_path):
     Returns:
         bool: True if the deployment is successful, False otherwise.
     """
-    
+
     if not exists(archive_path):
         return False
 
@@ -26,7 +27,7 @@ def do_deploy(archive_path):
         put(archive_path, "/tmp/")
         file_name = re.search(r'[^/]+$', archive_path).group(0)
         deploy_path = join("/data/web_static/releases/",
-                                splitext(file_name)[0])
+                            splitext(file_name)[0])
         run("mkdir -p {}".format(deploy_path))
 
         run("tar -xzf /tmp/{} -C {}".format(file_name, deploy_path))
@@ -43,4 +44,3 @@ def do_deploy(archive_path):
         return False
 
     return True
-    
