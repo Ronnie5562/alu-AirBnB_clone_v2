@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+import re
+from time import strftime
+from fabric.context_managers import cd
+from fabric.api import env, put, run, sudo, local
+from os.path import join, exists, splitext
+
 do_pack = __import__('1-pack_web_static').do_pack
 do_deploy = __import__('2-do_deploy_web_static').do_deploy
 
