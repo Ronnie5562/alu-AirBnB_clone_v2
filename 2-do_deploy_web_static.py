@@ -43,4 +43,4 @@ def do_deploy(archive_path):
     except Exception as err:
         return False
 
-    return True 
+    return True
