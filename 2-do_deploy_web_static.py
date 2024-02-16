@@ -28,9 +28,9 @@ def do_deploy(archive_path):
         file_name = re.search(r'[^/]+$', archive_path).group(0)
         deploy_path = join("/data/web_static/releases/",
                             splitext(file_name)[0])
-        run("mkdir -p {}".format(deploy_path))
+        sudo("mkdir -p {}".format(deploy_path))
 
-        run("tar -xzf /tmp/{} -C {}".format(file_name, deploy_path))
+        sudo("tar -xzf /tmp/{} -C {}".format(file_name, deploy_path))
 
         with cd(deploy_path):
             run("mv web_static/* .")
