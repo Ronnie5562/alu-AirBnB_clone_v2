@@ -5,9 +5,6 @@ from fabric.context_managers import cd
 from fabric.api import env, put, sudo, local
 from os.path import join, exists, splitext
 
-# do_pack = __import__('1-pack_web_static').do_pack
-# do_deploy = __import__('2-do_deploy_web_static').do_deploy
-
 env.hosts = ["54.242.215.110", "34.229.154.33"]
 
 
