@@ -10,6 +10,7 @@ def index():
     """Returns the string "Hello HBNB!" to the client"""
     return 'Hello HBNB!'
 
+
 @app.route('/hbnb', strict_slashes=False)
 def hbnb():
     """Returns the string "HBNB" to the client"""
